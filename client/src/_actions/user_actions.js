@@ -71,7 +71,7 @@ export function getCartItems(cartItems, userCart) {
       .get(`/api/product/products_by_id?id=${cartItems}&type=array`)
       .then((response) => {
          //Make CartDetail inside Redux Store
-         // We need to add quantity data to Product Information that come from Product Collection.
+         // need to add quantity data to Product Information that come from Product Collection.
 
          userCart.forEach((cartItem) => {
             response.data.forEach((productDetail, i) => {

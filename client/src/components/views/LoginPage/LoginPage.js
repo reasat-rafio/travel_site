@@ -46,7 +46,7 @@ function LoginPage(props) {
 
                dispatch(loginUser(dataToSubmit))
                   .then((response) => {
-                     console.log(response);
+                     // console.log(response);
                      if (response.payload.loginSuccess) {
                         window.localStorage.setItem(
                            "userId",

@@ -7,9 +7,7 @@ const { Payment } = require("../models/Payment");
 
 const async = require("async");
 
-//=================================
-//             User
-//=================================
+// !            User
 
 router.get("/auth", auth, (req, res) => {
    res.status(200).json({
@@ -82,7 +80,7 @@ router.get("/addToCart", auth, (req, res) => {
    User.findOne({ _id: req.user._id }, (err, userInfo) => {
       let duplicate = false;
 
-      console.log(userInfo);
+      // console.log(userInfo);
 
       userInfo.cart.forEach((item) => {
          if (item.id == req.query.productId) {
@@ -167,7 +165,7 @@ router.post("/successBuy", auth, (req, res) => {
    let history = [];
    let transactionData = {};
 
-   //1.Put brief Payment Information inside User Collection
+   // brief Payment Information inside User Collection
    req.body.cartDetail.forEach((item) => {
       history.push({
          dateOfPurchase: Date.now(),
@@ -179,7 +177,7 @@ router.post("/successBuy", auth, (req, res) => {
       });
    });
 
-   //2.Put Payment Information that come from Paypal into Payment Collection
+   // Payment Information that come from Paypal into Payment Collection
    transactionData.user = {
       id: req.user._id,
       name: req.user.name,
@@ -201,18 +199,15 @@ router.post("/successBuy", auth, (req, res) => {
          payment.save((err, doc) => {
             if (err) return res.json({ success: false, err });
 
-            //3. Increase the amount of number for the sold information
+            // Increase the amount of number for the sold information
 
-            //first We need to know how many product were sold in this transaction for
+            //first need to know how many product were sold in this transaction for
             // each of products
 
             let products = [];
             doc.product.forEach((item) => {
                products.push({ id: item.id, quantity: item.quantity });
             });
-
-            // first Item    quantity 2
-            // second Item  quantity 3
 
             async.eachSeries(
                products,
