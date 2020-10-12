@@ -4,14 +4,15 @@
    "description": "travel_blog",
    "main": "index.js",
    "engine": {
-      "node": "10.16.0",
-      "npm": "6.9.0"
+      "node": "12.18.4",
+      "npm": "6.14.6"
    },
    "scripts": {
       "start": "node server/index.js",
       "backend": "nodemon server/index.js",
       "frontend": "npm run front --prefix client",
-      "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
+      "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\"",
+      "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && apm run build --prefix client"
    },
    "author": "John ahn",
    "license": "ISC",
