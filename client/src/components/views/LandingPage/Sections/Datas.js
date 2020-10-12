@@ -1,72 +1,69 @@
-
 const price = [
-    {
-        "_id": 0,
-        "name": "Any",
-        "array": []
-    },
-    {
-        "_id": 1,
-        "name": "$0 to $199",
-        "array": [0, 199]
-    },
-    {
-        "_id": 2,
-        "name": "$200 to $249",
-        "array": [200, 249]
-    },
-    {
-        "_id": 3,
-        "name": "$250 to $279",
-        "array": [250, 279]
-    },
-    {
-        "_id": 4,
-        "name": "$280 to $299",
-        "array": [280, 299]
-    },
-    {
-        "_id": 5,
-        "name": "More than $300",
-        "array": [300, 1500000]
-    }
-]
-
-
+   {
+      _id: 0,
+      name: "Any",
+      array: [],
+   },
+   {
+      _id: 1,
+      name: "৫০০৳  থেকে   ১০০০৳",
+      array: [500, 1000],
+   },
+   {
+      _id: 2,
+      name: "১১০০৳  থেকে   ৩৫০০৳",
+      array: [1100, 3500],
+   },
+   {
+      _id: 3,
+      name: "৩৬০০৳  থেকে   ৬০০০৳",
+      array: [3600, 6000],
+   },
+   {
+      _id: 4,
+      name: "৬৫০০৳  থেকে   ৯০০০৳",
+      array: [6500, 9000],
+   },
+   {
+      _id: 5,
+      name: "More  than  ১০০০০৳",
+      array: [10000, 150000000],
+   },
+];
 
 const continents = [
-    {
-        "_id": 1,
-        "name": "Africa"
-    },
-    {
-        "_id": 2,
-        "name": "Europe"
-    },
-    {
-        "_id": 3,
-        "name": "Asia"
-    },
-    {
-        "_id": 4,
-        "name": "North America"
-    },
-    {
-        "_id": 5,
-        "name": "South America"
-    },
-    {
-        "_id": 6,
-        "name": "Australia"
-    },
-    {
-        "_id": 7,
-        "name": "Antarctica"
-    }
-]
+   {
+      _id: 1,
+      name: "Barisal",
+   },
+   {
+      _id: 2,
+      name: "Chittagong",
+   },
+   {
+      _id: 3,
+      name: "Dhaka",
+   },
+   {
+      _id: 4,
+      name: "Khulna",
+   },
+   {
+      _id: 5,
+      name: "Mymensingh",
+   },
+   {
+      _id: 6,
+      name: "Rajshahi",
+   },
+   {
+      _id: 7,
+      name: "Rangpur",
+   },
+   {
+      _id: 8,
+      name: "Sylhet",
+   },
+];
 
-
-export {
-    price,
-    continents
-}
+export { price, continents };
